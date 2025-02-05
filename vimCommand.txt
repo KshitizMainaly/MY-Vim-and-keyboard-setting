@@ -1,11 +1,12 @@
 {
-    "files.autoSave": "onFocusChange",
+    "files.autoSave": "afterDelay",
     "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
     "vim.sneak": true,
+"vim.sneakUseIgnorecase": true,
     "vim.easymotionMarkerooundColor": "#020202",
     "vim.normalModeKeyBindings": [
       {
@@ -87,9 +88,40 @@
   
   },
   "sync.gist": "0347f564969e6ea0530a7658bdcf7395",
-  "workbench.iconTheme": "material-icon-theme",
   "git.openRepositoryInParentFolders": "never",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "clangd.detectExtensionConflicts": false,
+  "clangd.path": "c:\\Users\\ACER\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "php.executablePath": "C:/xampp/php/php.exe",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "powermode.combo.location": "off",
+  "powermode.presets": "flames",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+},
+"[typescriptreact]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"typescript.updateImportsOnFileMove.enabled": "always",
+"[typescript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"files.autoSaveDelay": 2000,
+"editor.formatOnSave": true,
+"workbench.colorTheme": "Arbiter"
   
   }
   
