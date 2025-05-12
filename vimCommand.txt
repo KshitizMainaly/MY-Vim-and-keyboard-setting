@@ -1,91 +1,98 @@
 {
-    "files.autoSave": "afterDelay",
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.sneak": true,
-"vim.sneakUseIgnorecase": true,
-    "vim.easymotionMarkerooundColor": "#020202",
-    "vim.normalModeKeyBindings": [
-      {
-        "before": ["<leader>", "d"],
-        "after": ["d", "d"]
-      },
-      {
-        "before": ["<tab>"],
-        "commands": ["workbench.action.nextEditor"]
-      },
-      {
-        "before": ["<S-tab>"],
-        "commands": ["workbench.action.previousEditor"]
-      },
-    ],
-    "vim.insertModeKeyBindings": [
-      {
-        "before": ["j", "k"],
-        "after": ["<Esc>"]
-      },
-      {
-        "before": ["<C-j>"],
-        "after": ["<Esc>"]
-      },
-      {
-        "before": ["<C-k>"],
-        "after": ["<Esc>"]
-      }
-    ],
-    "vim.visualModeKeyBindings": [
-      {
-        "before": [">"],
-        "after": [">", "g", "v"]
-      },
-      {
-        "before": ["<"],
-        "after": ["<", "g", "v"]
-      },
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-      {
-        "before": ["<leader>", "d"],
-        "after": ["d", "d"]
-      },
-      {
-        "before": ["<leader>", "w"],
-        "commands": ["workbench.action.splitEditor"]
-      },
-      {
-        "before": ["<leader>", "e"],
-        "commands": ["workbench.action.toggleSidebarVisibility"]
-      },
-      {
-        "before": ["<leader>", "f"],
-        "commands": ["revealInExplorer"]
-      },
-      {
-        "before": ["<leader>", "h"],
-        "after": ["_"]
-      },
-      {
-        "before": ["<leader>", "l"],
-        "after": ["$"]
-      }
-    ],
-    "vim.leader": "<space>",
+  "files.autoSave": "onFocusChange",
+  "vim.easymotion": true,
+"vim.easymotionMarkerForegroundColorOneChar": "#ff00ff",
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.sneak": true,
+"vim.ignorecase": true,
+"vim.smartcase": true,
+ "vim.easymotionMarkerBackgroundColor": "#020202",
+ "vim.normalModeKeyBindings": [
+
   
-    "vim.handleKeys": {
-      "<C-a>": false,
-      "<C-f>": false,
-      // VS Code new marker @ next occurence
-      "<C-c>": false,
-      // Cut
-      "<C-x>": false,
-      // Paste
-      "<C-v>": false,
-      "<C-z>": false,
-      "<C-y>": false
+    {
+      "before": ["<tab>"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<S-tab>"],
+      "commands": ["workbench.action.previousEditor"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    }
+  ],
+
+  "vim.normalModeKeyBindingsNonRecursive": [
   
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["revealInExplorer"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "after": ["_"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "after": ["$"]
+    }, {
+    "before": ["H"],
+    "commands": ["cursorPageUp"] // Scrolls up one page
+  },
+  {
+    "before": ["L"],
+    "commands": ["cursorPageDown"] // Scrolls down one page
+  },
+
+
+  ],
+
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+     "<C-f>": true,
+    "<C-c>": false,
+    "<C-x>": false,
+    "<C-v>": false,
+    "<C-z>": false,
+    "<C-y>": false
   },
   "sync.gist": "0347f564969e6ea0530a7658bdcf7395",
   "git.openRepositoryInParentFolders": "never",
@@ -94,14 +101,12 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "clangd.detectExtensionConflicts": false,
-  "clangd.path": "c:\\Users\\ACER\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
+  "clangd.path": "${env:USERPROFILE}\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "php.executablePath": "C:/xampp/php/php.exe",
-  "liveServer.settings.donotShowInfoMsg": true,
-  "powermode.combo.location": "off",
-  "powermode.presets": "flames",
+  "liveServer.settings.donotShowInfoMsg": true, 
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -111,17 +116,41 @@
   },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-},
-"[typescriptreact]": {
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"typescript.updateImportsOnFileMove.enabled": "always",
-"[typescript]": {
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"files.autoSaveDelay": 2000,
-"editor.formatOnSave": true,
-"workbench.colorTheme": "Arbiter"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.autoSaveDelay": 5000,
+  "editor.formatOnSave": true,
+  "lldb.suppressUpdateNotifications": true,
+  "terminal.integrated.suggest.quickSuggestions": {
+    "commands": "on",
+    "arguments": "on",
+    "unknown": "on"
+  },
+  "intelliphp.inlineSuggestionsEnabled": true,
+
+
+  // 🔻 IntelliSense turned off below 🔻
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings":true
+  },
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "emmet.triggerExpansionOnTab": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "editor.stickyScroll.enabled": false,
   
-  }
-  
+"workbench.colorCustomizations": {
+  "editor.findMatchHighlightBackground": "#ff00ff40",
+  "editor.findMatchHighlightBorder": "#ff00ff"
+},
+
+
+}
