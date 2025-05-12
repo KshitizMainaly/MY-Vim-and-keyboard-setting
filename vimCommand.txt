@@ -48,7 +48,11 @@
   ],
 
   "vim.normalModeKeyBindingsNonRecursive": [
-  
+  {
+  "before": ["<leader>", "a"],
+  "after": ["g", "g", "d", "G"]
+}
+,
     {
       "before": ["<leader>", "d"],
       "after": ["d", "d"]
@@ -57,7 +61,7 @@
       "before": ["<leader>", "w"],
       "commands": ["workbench.action.splitEditor"]
     },
-    {
+     {
       "before": ["<leader>", "e"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
