@@ -1,4 +1,4 @@
-![wallpapersden com_monkey-luffy-4k-one-piece-2024-art_3840x2160](https://github.com/user-attachments/assets/4e82b3e7-dbce-4ab9-8265-6b44fc90f74d)#what Command on vim looks like:
+#what Command on vim looks like:
 #firstPage
 ![vimsample1](https://github.com/user-attachments/assets/9bc0d151-8597-4763-8545-2811cdee4050)
 
