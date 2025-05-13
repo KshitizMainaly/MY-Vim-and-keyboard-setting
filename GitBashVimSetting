@@ -1,0 +1,35 @@
+" === PLUGIN MANAGER ===
+call plug#begin('~/.vim/plugged')
+Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
+Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
+call plug#end()
+
+" === SETTINGS ===
+set number
+set relativenumber
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set clipboard=unnamedplus
+set mouse=a
+let mapleader = " "  
+
+" === KEYBINDINGS ===
+inoremap jk <Esc>
+vnoremap > >gv
+vnoremap < <gv
+
+" Select all and delete
+nnoremap <leader>a ggVGd
+
+" Go to end/start of line
+nnoremap <leader>l $
+nnoremap <leader>h 0
+
+" Visual mode copy
+vnoremap <leader>y y
+
+" Shift + L/H for scrolling and visible top/bottom
+nnoremap L L<C-d>
+nnoremap H H<C-u>
