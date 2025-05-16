@@ -49,6 +49,8 @@
 
   "vim.normalModeKeyBindingsNonRecursive": [
   {
+
+
   "before": ["<leader>", "a"],
   "after": ["g", "g", "d", "G"]
 }
@@ -84,6 +86,27 @@
     "before": ["L"],
     "commands": ["cursorPageDown"] // Scrolls down one page
   },
+{
+  "before": ["d"],
+  "after": ["\"", "_", "d"]
+},
+{
+  "before": ["x"],
+  "after": ["\"", "_", "x"]
+},
+{
+  "before": ["D"],
+  "after": ["\"", "_", "D"]
+},
+{
+  "before": ["c"],
+  "after": ["\"", "_", "c"]
+},
+{
+  "before": ["C"],
+  "after": ["\"", "_", "C"]
+}
+
 
 
   ],
@@ -141,11 +164,11 @@
 
   // 🔻 IntelliSense turned off below 🔻
   "editor.quickSuggestions": {
-    "other": true,
+    "other": false,
     "comments": false,
-    "strings":true
+    "strings": true,
   },
-  "editor.suggestOnTriggerCharacters": false,
+  "editor.suggestOnTriggerCharacters": true,
   "editor.acceptSuggestionOnEnter": "on",
   "emmet.triggerExpansionOnTab": true,
   "liveServer.settings.donotVerifyTags": true,
