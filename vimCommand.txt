@@ -1,18 +1,40 @@
 {
-  "files.autoSave": "onFocusChange",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "editor.formatOnSave": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.minimap.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+
+  "vim.leader": "<space>",
   "vim.easymotion": true,
-"vim.easymotionMarkerForegroundColorOneChar": "#ff00ff",
+  "vim.easymotionMarkerForegroundColorOneChar": "#ff00ff",
+  "vim.easymotionMarkerBackgroundColor": "#020202",
   "vim.incsearch": true,
+  "vim.hlsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
-  "vim.hlsearch": true,
   "vim.sneak": true,
-"vim.ignorecase": true,
-"vim.smartcase": true,
- "vim.easymotionMarkerBackgroundColor": "#020202",
- "vim.normalModeKeyBindings": [
+  "vim.ignorecase": true,
+  "vim.smartcase": true,
 
-  
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-c>": false,
+    "<C-x>": false,
+    "<C-v>": false,
+    "<C-z>": false,
+    "<C-y>": false
+  },
+
+  "vim.normalModeKeyBindings": [
     {
       "before": ["<tab>"],
       "commands": ["workbench.action.nextEditor"]
@@ -22,20 +44,14 @@
       "commands": ["workbench.action.previousEditor"]
     }
   ],
+
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
       "after": ["<Esc>"]
-    },
-    {
-      "before": ["<C-j>"],
-      "after": ["<Esc>"]
-    },
-    {
-      "before": ["<C-k>"],
-      "after": ["<Esc>"]
     }
   ],
+
   "vim.visualModeKeyBindings": [
     {
       "before": [">"],
@@ -48,22 +64,19 @@
   ],
 
   "vim.normalModeKeyBindingsNonRecursive": [
-  {
-
-
-  "before": ["<leader>", "a"],
-  "after": ["g", "g", "d", "G"]
-}
-,
     {
-      "before": ["<leader>", "d"],
-      "after": ["d", "d"]
+      "before": ["<leader>", "a"],
+      "after": ["g", "g", "G"]
+    },
+    {
+      "before": ["<leader>", "v"],
+      "after": ["g", "g", "V", "G"]
     },
     {
       "before": ["<leader>", "w"],
       "commands": ["workbench.action.splitEditor"]
     },
-     {
+    {
       "before": ["<leader>", "e"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
@@ -73,111 +86,104 @@
     },
     {
       "before": ["<leader>", "h"],
-      "after": ["_"]
+      "after": ["0"]
     },
     {
       "before": ["<leader>", "l"],
       "after": ["$"]
-    }, {
-    "before": ["H"],
-    "commands": ["cursorPageUp"] // Scrolls up one page
-  },
-  {
-    "before": ["L"],
-    "commands": ["cursorPageDown"] // Scrolls down one page
-  },
-{
-  "before": ["d"],
-  "after": ["\"", "_", "d"]
-},
-{
-  "before": ["x"],
-  "after": ["\"", "_", "x"]
-},
-{
-  "before": ["D"],
-  "after": ["\"", "_", "D"]
-},
-{
-  "before": ["c"],
-  "after": ["\"", "_", "c"]
-},
-{
-  "before": ["C"],
-  "after": ["\"", "_", "C"]
-}
-
-
-
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["editor.action.removeHighlight"]
+    },
+    {
+      "before": ["H"],
+      "commands": ["cursorPageUp"]
+    },
+    {
+      "before": ["L"],
+      "commands": ["cursorPageDown"]
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["x"],
+      "after": ["\"", "_", "x"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "_", "D"]
+    },
+    {
+      "before": ["c"],
+      "after": ["\"", "_", "c"]
+    },
+    {
+      "before": ["C"],
+      "after": ["\"", "_", "C"]
+    }
   ],
 
-  "vim.leader": "<space>",
-  "vim.handleKeys": {
-    "<C-a>": false,
-     "<C-f>": true,
-    "<C-c>": false,
-    "<C-x>": false,
-    "<C-v>": false,
-    "<C-z>": false,
-    "<C-y>": false
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.splitSizing": "distribute",
+  "workbench.colorCustomizations": {
+    "editor.findMatchHighlightBackground": "#e806e8c8",
+    "editor.findMatchHighlightBorder": "#f80ff8e7"
   },
-  "sync.gist": "0347f564969e6ea0530a7658bdcf7395",
+
   "git.openRepositoryInParentFolders": "never",
+  "sync.gist": "0347f564969e6ea0530a7658bdcf7395",
+
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "clangd.detectExtensionConflicts": false,
-  "clangd.path": "${env:USERPROFILE}\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "php.executablePath": "C:/xampp/php/php.exe",
-  "liveServer.settings.donotShowInfoMsg": true, 
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "files.autoSaveDelay": 5000,
-  "editor.formatOnSave": true,
-  "lldb.suppressUpdateNotifications": true,
   "terminal.integrated.suggest.quickSuggestions": {
     "commands": "on",
     "arguments": "on",
     "unknown": "on"
   },
-  "intelliphp.inlineSuggestionsEnabled": true,
 
+  "clangd.detectExtensionConflicts": false,
+  "clangd.path": "${env:USERPROFILE}\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
 
-  // 🔻 IntelliSense turned off below 🔻
-  "editor.quickSuggestions": {
-    "other": false,
-    "comments": false,
-    "strings": true,
-  },
-  "editor.suggestOnTriggerCharacters": true,
-  "editor.acceptSuggestionOnEnter": "on",
+  "php.executablePath": "C:/xampp/php/php.exe",
+  "lldb.suppressUpdateNotifications": true,
+
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
   "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.donotVerifyTags": true,
-  "editor.stickyScroll.enabled": false,
-  
-"workbench.colorCustomizations": {
-  "editor.findMatchHighlightBackground": "#ff00ff40",
-  "editor.findMatchHighlightBorder": "#ff00ff"
-},
-
-
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "jdk.java.onSave.organizeImports": false
 }
