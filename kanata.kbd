@@ -1,0 +1,32 @@
+(defcfg
+  process-unmapped-keys yes
+  danger-enable-cmd yes
+)
+
+(defsrc
+  caps a s d f w c v h j k l lsft rsft i b spc t f4
+)
+
+(defalias
+  ;; Tap = Esc, Hold = Switch to caps-layer
+  ;; Using tap-hold-release: hold only triggers when another key is pressed AND released
+  cap  (tap-hold-release 200 200 esc (layer-toggle caps-layer))
+
+  ;; One-Shot Shift
+  oss (one-shot 500 lsft)
+
+  ;; Caps-Word: auto-caps until space
+  cw   (caps-word 2000)
+)
+
+(deflayer base
+  @cap a s d f w c v h j k l @oss @oss i b spc t caps
+)
+
+;; This layer is active whenever CapsLock is held.
+(deflayer caps-layer
+  ;; a=SelectAll, s=Save, d=Bspc, f=Del, w=DelWord, c=Copy, v=Paste
+  ;; hjkl=Arrows, i=CapsWord, spc=Leader(Ctrl+Space)
+  ;; b=Brave, t=WezTerm
+  _ C-a C-s bspc del (multi lctl bspc) C-c C-v left down up rght _ _ @cw (cmd "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe") (multi lctl spc) (cmd "C:\\Program Files\\WezTerm\\wezterm-gui.exe") _
+)
