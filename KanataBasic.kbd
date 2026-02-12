@@ -1,0 +1,32 @@
+(defcfg
+  process-unmapped-keys yes
+  danger-enable-cmd yes
+)
+
+(defsrc
+  caps i b spc t f4
+)
+
+(defalias
+  ;; Tap = Esc, Hold = Left Ctrl + Switch to caps-layer
+  cap (tap-hold-press 190 190 esc (multi lctl (layer-toggle caps-layer)))
+  ;; Tap = Space (Ctrl+Space when cap is held), Hold = Toggle hyper-layer
+  spch (tap-hold-press 200 200 spc (layer-toggle hyper-layer))
+  ;; Modern Caps Lock: Auto-turns off after a word or space
+  cw (caps-word 2000)
+)
+
+(deflayer base
+  @cap i b spc t caps
+)
+
+;; This layer is active whenever CapsLock is held.
+;; It allows us to intercept the 'spc' key for both WezTerm leader and hyper-layer.
+(deflayer caps-layer
+  _ @cw _ @spch _ _
+)
+
+;; This layer is active when CapsLock and Space are both held.
+(deflayer hyper-layer
+  _ _ (cmd "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe") _ (cmd "C:\\Program Files\\WezTerm\\wezterm-gui.exe") _
+)
