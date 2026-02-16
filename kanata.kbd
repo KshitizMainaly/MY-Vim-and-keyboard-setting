@@ -40,10 +40,13 @@
   ;; a=SelectAll, s=Save, d=Bspc, f=Del, w=DeleteWord, c=Copy, v=Paste
   ;; hjkl=Arrows, i=CapsWord, spc=Leader, m=LeftClick
   ;; lalt/ralt=Enter mouse-layer, u=pass, n=pass
-  _ C-a C-s bspc del (multi lctl bspc) C-c C-v left down up rght _ _ @cw C-left (multi lctl spc) C-t _ C-z C-y C-w A-tab C-l mlft @tml _ _ @tml
+  _ C-a C-s bspc del (multi lctl bspc) C-c C-v left down up rght _ _ @cw C-left (multi lctl spc) C-t _ C-z C-y C-w A-tab C-rght mlft @tml _ _ @tml
 )
 
 ;; Mouse control layer: (CapsLock + Alt) + keys
 (deflayer mouse-layer
   _ _ _ @mwd _ _ _ _ @mml @mmd @mmu @mmr _ _ _ _ _ _ _ _ _ _ _ _ mlft _ @mwu mrgt _
 )
+
+
+
