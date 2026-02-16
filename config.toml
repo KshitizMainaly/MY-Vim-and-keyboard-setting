@@ -1,0 +1,43 @@
+# =========================
+# Helix Configuration
+# =========================
+theme = "base16_transparent"
+# =========================
+# Editor Settings
+# =========================
+[editor]
+shell = ["nu", "-c"]  # Add -c flag to execute commands line-number = "relative"
+mouse = false
+true-color = true
+bufferline = "multiple"
+color-modes = true
+end-of-line-diagnostics = "hint"
+cursor-shape.insert = "bar"
+cursor-shape.normal = "block"
+cursor-shape.select = "underline"
+file-picker.hidden = false
+auto-save = true
+indent-guides = { render = true }
+# =========================
+# LSP Settings
+# =========================
+[editor.lsp]
+display-messages = true
+display-inlay-hints = false
+# =========================
+# Inline Diagnostics - Balanced approach
+# =========================
+[editor.inline-diagnostics]
+cursor-line = "warning"   # Only show warnings+ on current line
+other-lines = "disable"   # Hide diagnostics on other lines completely
+# =========================
+# Normal Mode Keybindings
+# =========================
+[keys.normal]
+"X" = "extend_line_up"
+e = [
+  ':sh rm -f D:/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=D:/unique-file',
+  ':open %sh{open D:/unique-file | str trim}',
+  ':redraw',
+]

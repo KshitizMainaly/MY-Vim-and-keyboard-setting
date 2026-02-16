@@ -1,0 +1,10 @@
+inherits = "base16_transparent"
+
+# # --- Floating popup ---
+# "ui.popup" = { bg = "#101010EE" }      # only popup gets background (semi transparent)
+# "ui.popup.border" = "#888888"
+
+
+# -- change floadting popupt ----
+"ui.popup" = { bg = "#10101055" }   # lighter alpha for insert mode visibility
+"ui.popup.border" = "#88888888"    # subtle semi-transparent bor
