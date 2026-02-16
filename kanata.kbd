@@ -4,29 +4,46 @@
 )
 
 (defsrc
-  caps a s d f w c v h j k l lsft rsft i b spc t f4
+  caps a s d f w c v h j k l lsft rsft i b spc t f4 r y q tab e m lalt u n ralt
 )
 
 (defalias
   ;; Tap = Esc, Hold = Switch to caps-layer
-  ;; Using tap-hold-release: hold only triggers when another key is pressed AND released
-  cap  (tap-hold-release 200 200 esc (layer-toggle caps-layer))
+  cap  (tap-hold-release 250 250 esc (layer-toggle caps-layer))
 
   ;; One-Shot Shift
   oss (one-shot 500 lsft)
 
-  ;; Caps-Word: auto-caps until space
+  ;; Caps-Word
   cw   (caps-word 2000)
-)
 
+  ;; Mouse movement - 2px every 20ms (100px/s) - visible but precise
+  mmd (movemouse-down 10 5)
+  mml (movemouse-left 10 5)
+  mmr (movemouse-right 10 5)
+  mmu (movemouse-up 10 5)
+
+  ;; Mouse scroll
+  mwu (mwheel-up 50 120)
+  mwd (mwheel-down 50 120)
+
+  ;; Toggle mouse layer
+  tml (layer-toggle mouse-layer)
+
+)
 (deflayer base
-  @cap a s d f w c v h j k l @oss @oss i b spc t caps
+  @cap a s d f w c v h j k l @oss @oss i b spc t caps r y q tab e m lalt u n ralt
 )
 
 ;; This layer is active whenever CapsLock is held.
 (deflayer caps-layer
-  ;; a=SelectAll, s=Save, d=Bspc, f=Del, w=DelWord, c=Copy, v=Paste
-  ;; hjkl=Arrows, i=CapsWord, spc=Leader(Ctrl+Space)
-  ;; b=Brave, t=WezTerm
-  _ C-a C-s bspc del (multi lctl bspc) C-c C-v left down up rght _ _ @cw (cmd "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe") (multi lctl spc) (cmd "C:\\Program Files\\WezTerm\\wezterm-gui.exe") _
+  ;; a=SelectAll, s=Save, d=Bspc, f=Del, w=DeleteWord, c=Copy, v=Paste
+  ;; hjkl=Arrows, i=CapsWord, spc=Leader, m=LeftClick
+  ;; lalt/ralt=Enter mouse-layer, u=pass, n=pass
+  _ C-a C-s bspc del (multi lctl bspc) C-c C-v left down up rght _ _ @cw C-left (multi lctl spc) C-t _ C-z C-y C-w A-tab C-l mlft @tml _ _ @tml
+)
+
+;; Mouse control layer: (CapsLock + Alt) + keys
+(deflayer mouse-layer
+  _ _ _ @mwd _ _ _ _ @mml @mmd @mmu @mmr _ _ _ _ _ _ _ _ _ _ _ _ mlft _ @mwu mrgt _
 )
